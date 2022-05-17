@@ -1,0 +1,18 @@
+WHITESPACE = _{" "}
+integer = {("+" | "-")? ~ ('0'..'9'+)}
+ident = {("+" | "-")? ~ ASCII_ALPHA+}
+float = {("+" | "-")? ~ (integer ~ "." ~ integer)}
+nest = {"(" ~ math_expr ~ ")"}
+atom = _{nest | ident | float | integer}
+operator = _{power | modulo | eq | add | mul | sub | div} 
+add = {"+"}
+sub = {"-"}
+mul = {"*"}
+div = {"/"}
+eq = {"="}
+modulo = {"%"}
+power = {"**"}
+math_expr = _{atom ~ ((add | power | sub | div | modulo | mul) ~ atom)*}
+binding = _{math_expr ~ eq ~ math_expr}
+expr = _{binding | math_expr}
+input = _{SOI ~ expr ~ &EOI}

@@ -1,3 +1,4 @@
+pub use pest;
 use lazy_static::lazy_static;
 use pest::{
     error::Error,

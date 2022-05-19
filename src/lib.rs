@@ -106,6 +106,9 @@ fn parse_pairs(ast: Pairs<Rule>) -> Expr {
     )
 }
 
+#[cfg(feature = "visitor")]
+pub mod visitor;
+
 #[cfg(test)]
 mod tests {
     use super::*;

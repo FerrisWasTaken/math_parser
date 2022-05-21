@@ -1,8 +1,9 @@
 [package]
 name = "math_parser"
-version = "0.3.1"
+version = "0.3.2"
 edition = "2021"
 description = "A parser for mathematical expressions"
+documentation = "https://docs.rs/math_parser/latest/math_parser"
 license = "GPL-3.0-only"
 repository = "https://github.com/muppi090909/math_parser"
 
